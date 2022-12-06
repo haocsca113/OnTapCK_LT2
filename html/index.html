@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnTapCK_LT2</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src="../js/index.js"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            border: 1px solid #333;
+        }
+        .menu-header{
+            
+        }
+        .menu-header li{
+            display: inline-block;
+            padding: 10px 10px;
+        }
+
+        .content-table{
+            border: 1px solid #333;
+        }
+
+        .footer{
+            text-align: center;
+        }
+        .footer p{
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="../img/banner-5.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul>
+                        <li>
+                            <a href="#">Trang chủ SYC</a>
+                        </li>
+                        <li>
+                            <a href="#" id="myBtn">Đăng ký tham gia</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-table">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-light">
+                        <h4 style="text-align: center;">DANH SÁCH HỌC VIÊN ĐĂNG KÝ</h4>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Họ và tên</th>
+                                <th>Số điện thoại</th>
+                                <th>Ngày sinh</th>
+                                <th>Địa chỉ</th>
+                                <th>Khóa học</th>
+                                <th>Học phí</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Hoàng Lâm</td>
+                                <td>090006888</td>
+                                <td>20/3/2010</td>
+                                <td>123 Nguyễn Du P5 Gò Vấp TPHCM</td>
+                                <td>6 tuần</td>
+                                <td>8000000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>19484721_Trương Huỳnh Hào</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="mx-auto">THÔNG TIN HỌC VIÊN</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div id="thongbao" class="text-danger" style="text-align: center;"></div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Họ và tên</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtTen" class="form-control" placeholder="">
+                                <span id="tbTen" class="text-danger">*</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Số điện thoại</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtSDT" class="form-control" placeholder="">
+                                <span id="tbSDT" class="text-danger">*</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Ngày sinh</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="date" id="txtNgaySinh" class="form-control" placeholder="">
+                                <span id="tbNgaySinh" class="text-danger">*</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Địa chỉ</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtDiaChi" class="form-control" placeholder="">
+                                <span id="tbDiaChi" class="text-danger">*</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Bạn muốn tham gia khóa nào?</label>
+                            </div>
+                            <div class="col-md-9">
+                                <select name="" id="txtTime" class="form-control">
+                                    <option value="5000000">Khóa 2 tuần</option>
+                                    <option value="8000000">Khóa 4 tuần</option>
+                                    <option value="9000000">Khóa 6 tuần</option>
+                                </select>
+                                <span id="tbTime" class="text-danger">*</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Học Phí</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" id="txtHocPhi" class="form-control" value="5000000" placeholder="">
+                                <span id="tbHocPhi" class="text-danger">*</span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="">Ảnh đại diện</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="file" id="txtAnh" class="form-control" placeholder="" accept=".jpg .png .gif">
+                                <span id="tbAnh" class="text-danger">*</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btnSave" class="btn btn-success btn-block">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
